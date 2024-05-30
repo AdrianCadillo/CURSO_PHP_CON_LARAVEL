@@ -15,9 +15,9 @@ if(PHP_SESSION_ACTIVE !== session_status())
    -->
    <link rel="stylesheet" href="./output.css">
 </head>
-<body>
+<body class="bg-gray-900">
     <div class="flex justify-center my-4 w-full">
-       <div class="border border-red-400 p-4 ">
+       <div class="shadow-lg shadow-black p-4 lg:w-80 md:60 w-[350px] bg-white">
          <h1 class="text-2xl mb-4">Login</h1>
           <div class="mt-3">
             <?php 
@@ -35,16 +35,21 @@ if(PHP_SESSION_ACTIVE !== session_status())
             <?php unset($_SESSION["error_login"]); endif;?>
           </div>
          <form action="../controlador/loginController.php" method="post">
-         <input type="text" class="p-2 border border-blue-600 w-full mb-2" name="username"
-         value="<?php echo isset($_SESSION["username"]) ? $_SESSION["username"]: '';unset($_SESSION["username"]) ?>">
-         <input type="password" class="p-2 border border-blue-600 w-full mb-2" name="password">
+         <input type="text" class="p-2 border border-blue-600 w-full mb-2
+         focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg
+         placeholder:italic font-bold" name="username"
+         placeholder="Username...."
+         value="<?php echo isset($_SESSblue["username"]) ? $_SESSION["username"]: '';unset($_SESSION["username"]) ?>">
+         <input type="password" class="p-2 border border-blue-600 w-full mb-2
+         focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg
+         placeholder:italic font-bold" name="password" placeholder="Password....">
          <label for="">
             Recordar la sesión 
             <input type="checkbox" class="mb-2" name="remember">
          </label>
          <br>
-         <button class="p-2 border-2 border-red-500 bg-red-400 hover:bg-red-500
-          rounded-lg" name="entrar">Entrar</button>
+         <button class="p-2 border-2 border-blue-500 bg-blue-400 hover:bg-blue-500
+          rounded-lg text-white font-bold w-40 mx-auto block mt-2" name="entrar">Entrar</button>
          </form>
      </div>
      

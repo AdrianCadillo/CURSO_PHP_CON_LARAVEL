@@ -11,6 +11,7 @@ $Credenciales = [
 
 if(isset($_POST["entrar"]))
 {
+    
     $Errors = [];
    /// validación de la entrada de datos
    if(empty($_POST["username"]))
@@ -36,10 +37,17 @@ if(isset($_POST["entrar"]))
 
      if($Username === $Credenciales["username"] and $Password === $Credenciales["password"])
      {
-        /// hacer login
+      $Remember =  isset($_POST["remember"]) ? true:false;
+
+       if($Remember){
+         setcookie("user_login",
+         openssl_encrypt($Username,"AES-128-CBC","curso"),time()+45,"/");
+       }else{
+         /// hacer login
         $_SESSION["user_login"] = $Username;
-        header("location:../views/dashboard.php");
-        exit;
+       }
+       header("location:../views/dashboard.php");
+      exit;
      }else{
         $_SESSION["error_login"] = "credenciales incorrectos";
      }
