@@ -92,12 +92,67 @@
 // extract($route);
 // echo $controller ." ".$methodo;
 
-$controlador = "usuario";
-$methodo = "import";
+// $controlador = "usuario";
+// $methodo = "import";
 
-$array_compact = compact("controlador","methodo");
+// $array_compact = compact("controlador","methodo");
 
-echo $array_compact["controlador"];
+// echo $array_compact["controlador"];
+
+/**
+ * ARRAY_FILTER
+ */
+
+//  $numeros = [2,12,5,7,8,10];
+
+//  $NumerosPares = array_filter($numeros,function($num){
+//     return  fmod($num,2) == 0;
+//  });
+
+//  print_r($NumerosPares);
+
+
+// $ruta = "/category/create";
+
+// $ruta = explode("/",$ruta);
+
+// print_r($ruta);
+
+// $NuevaRuta = array_filter($ruta);
+
+// print_r($NuevaRuta);
+
+/** ARRAY MAP */
+
+// $paises = ["peru","bolivia","venezuela","brasil"];
+
+// $MayusculaPrimeraLetra = array_map("ucwords",$paises);
+
+// print_r($MayusculaPrimeraLetra);
+
+
+// $numeros = [1,4,5,6,7,8,9,12];
+
+// $Primos = array_map(function($num){
+//     $j = 1; $contador = 0;
+
+//     while($j<=$num):
+//         if(fmod($num,$j) == 0){
+//             $contador++;
+//         }
+//         $j++;
+//     endwhile;
+
+//     if($contador == 2)
+//     {
+//         return $num;
+//     }
+// },$numeros);
+
+// print_r($Primos);
+
+
+
 
 
 
