@@ -1,0 +1,2 @@
+<?php
+echo "HOLA, SOY LA LOGICA REQUIRE_ONCE";
